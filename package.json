@@ -1,0 +1,23 @@
+{
+  "name": "piggi",
+  "version": "0.0.1",
+  "description": "piggi is an app that integrates to the sbanken api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariusbreivik/piggi.git"
+  },
+  "keywords": [
+    "nodejs",
+    "sbanken"
+  ],
+  "author": "marius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariusbreivik/piggi/issues"
+  },
+  "homepage": "https://github.com/mariusbreivik/piggi#readme"
+}
