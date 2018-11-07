@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/mariusbreivik/piggi/issues"
   },
-  "homepage": "https://github.com/mariusbreivik/piggi#readme"
+  "homepage": "https://github.com/mariusbreivik/piggi#readme",
+  "dependencies": {
+    "btoa": "^1.2.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4"
+  }
 }
