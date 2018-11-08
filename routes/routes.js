@@ -9,7 +9,7 @@ router.use(function timeLog(req, res, next) {
 
 // define the home page route
 router.get('/', function(req, res) {
-  res.send('nice piggi...');
+  res.render('index');
 });
 
 module.exports = router;
