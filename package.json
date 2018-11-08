@@ -4,6 +4,7 @@
   "description": "piggi is an app that integrates to the sbanken api",
   "main": "server.js",
   "scripts": {
+    "lint": "eslint . --ext .js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,9 @@
     "btoa": "^1.2.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-google": "^0.11.0"
   }
 }
