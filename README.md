@@ -7,10 +7,11 @@ piggi is an integration to the sbanken api
 ### environment variables
 
 Set the following env`s:
-
+```
 - SSN - Your own social security number
 - SBANKEN_CLIENT_ID - clientId obtained from Sbanken
 - SBANKEN_SECRET - password obtained from Sbanken
+```
 
 ### Install dependencies
 
