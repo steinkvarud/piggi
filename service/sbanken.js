@@ -30,7 +30,7 @@ exports.getAccessToken = () => {
 exports.getAccountDetails = (token) => {
   const ssn = process.env.SSN || '12345678910';
   const accountServiceUrl = 'https://api.sbanken.no/Bank/api/v1/Accounts/';
-
+  const accountId = process.env.ACCOUNT_ID || '007';
   const promise = new Promise(function(resolve, reject) {
     httpClient
         .get(accountServiceUrl)
@@ -42,7 +42,26 @@ exports.getAccountDetails = (token) => {
             console.log(err);
             reject();
           } else {
-            resolve(res.body);
+            const accounts = res.body.items;
+
+            const accountList = [];
+
+            for (const x in accounts) {
+              if ( x != null) {
+                accountList.push(accounts[x]);
+              }
+            }
+            const filteredList = accountList.filter(function(account) {
+              return account.accountId == accountId;
+            });
+
+            if ( filteredList != null && filteredList[0] != null) {
+              const savingAccount = {
+                name: filteredList[0].name,
+                balance: filteredList[0].balance,
+              };
+              resolve(savingAccount);
+            }
           }
         });
   });
