@@ -5,5 +5,6 @@ module.exports = {
       },
     rules: {
         "arrow-body-style": 0,
+        "max-len":0
     }
 };

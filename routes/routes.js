@@ -1,7 +1,8 @@
 const express = require('express');
 const router = new express.Router();
 
-// middleware that is specific to this router
+const service = require('../service/sbanken');
+
 router.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
   next();
@@ -9,7 +10,18 @@ router.use(function timeLog(req, res, next) {
 
 // define the home page route
 router.get('/', function(req, res) {
-  res.render('index');
+  console.log('getting access token');
+  service.getAccessToken().then((data) => {
+    service.getAccountDetails(data.access_token)
+        .then((accountData) => {
+          res.render('index', {
+            accounts: JSON.stringify(accountData),
+          });
+        })
+        .catch((error) => {
+          res.render('error');
+        });
+  });
 });
 
 module.exports = router;
