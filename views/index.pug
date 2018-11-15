@@ -7,11 +7,17 @@ html(lang="en")
 
 		style.
 			body {
-				background: #b3a2a2;
+				background: #b3a2a3;
 			}
 	body 
-		div
-			.container
-				h4 Info from SBanken
-				each account in {accounts}
-					p Account: #{account}
+		p.text-center pIgGi
+		div.container
+			h4 Kontodetaljer
+			table.table.table-dark
+				tr
+					th Konto
+					th Saldo
+				tbody
+					tr
+						td #{account.name}
+						td #{account.balance}

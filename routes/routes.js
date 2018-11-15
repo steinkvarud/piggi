@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
     service.getAccountDetails(data.access_token)
         .then((accountData) => {
           res.render('index', {
-            accounts: JSON.stringify(accountData),
+            account: accountData,
           });
         })
         .catch((error) => {
