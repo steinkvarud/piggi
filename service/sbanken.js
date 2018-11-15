@@ -9,7 +9,7 @@ exports.getAccessToken = () => {
   const basicAuth = btoa(clientId + ':' + secret);
 
   const promise = new Promise(function(resolve, reject) {
-    console.log('sbanken : getting access token');
+    console.log('Getting access token');
     httpClient
         .post(identityServer)
         .send('grant_type=client_credentials')
@@ -20,6 +20,7 @@ exports.getAccessToken = () => {
             console.log(err);
             reject();
           } else {
+            console.log('Access token retrieved')
             resolve(res.body);
           }
         });
@@ -31,6 +32,8 @@ exports.getAccountDetails = (token) => {
   const ssn = process.env.SSN || '12345678910';
   const accountServiceUrl = 'https://api.sbanken.no/Bank/api/v1/Accounts/';
   const accountId = process.env.ACCOUNT_ID || '007';
+
+  console.log('Getting account details ' + accountId);
   const promise = new Promise(function(resolve, reject) {
     httpClient
         .get(accountServiceUrl)
@@ -43,6 +46,7 @@ exports.getAccountDetails = (token) => {
             reject();
           } else {
             const accounts = res.body.items;
+            console.log('Accounts retrieved');
 
             const accountList = [];
 
@@ -55,11 +59,14 @@ exports.getAccountDetails = (token) => {
               return account.accountId == accountId;
             });
 
+            console.log('Accounts filtered ');
+
             if ( filteredList != null && filteredList[0] != null) {
               const savingAccount = {
                 name: filteredList[0].name,
                 balance: filteredList[0].balance,
               };
+              console.log('Returning account details ' + savingAccount);
               resolve(savingAccount);
             }
           }
