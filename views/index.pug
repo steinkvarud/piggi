@@ -4,20 +4,59 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css")
+		link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css", integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")
 
 		style.
-			body {
-				background: #b3a2a3;
+			body { 
+				background: #94daf8;
+			}
+			.jumbotron{
+				background: #313d4d;
+				color: #faf5be;
+			}
+			.card-text {
+				background: #bee7ed;
+				color: #5e9290;
+			}
+			.card-balance {
+				font-size: 4em;
+				color: #278585;
+			}
+			.card-icon {
+				color: #7a4406;
+				background: #e37f65;
+			}
+			.icon {
+				font-size: 9em;
+			}
+			.piggy-bank-icon {
+				color: #e37f65;
+				background: #313d4d;
+			}
+			.piggy-bank-text {
+				background: #81bfbc;
+				color: #288584;
+			}
+			.savings-balance {
+				color: #313d4d;
+				font-size: 4em;
 			}
 	body 
 		p.text-center pIgGi
-		div.container
-			h4 Kontodetaljer
-			table.table.table-dark
-				tr
-					th Konto
-					th Saldo
-				tbody
-					tr
-						td #{account.name}
-						td #{account.balance}
+		.container
+			.jumbotron
+				h1.display-4 Hei du!
+			.row
+				.col.text-center.rounded-left.card-text.p-3.ml-3
+					h6 Du har
+					h1.display-4.card-balance 156kr
+					h6 på bankkortet
+				.col.mr-3.text-center.rounded-right.card-icon.icon
+					i.far.fa-credit-card
+			.row.mt-3
+				.col.ml-3.text-center.rounded-left.icon.piggy-bank-icon
+					i.fas.fa-piggy-bank
+				.col.p-3.mr-3.text-center.rounded-right.piggy-bank-text.mx-auto
+					h6 Du har spart
+					h1.display-4.savings-balance #{account.balance}
+					h6 Hurra!
