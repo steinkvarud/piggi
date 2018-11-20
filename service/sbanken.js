@@ -59,19 +59,26 @@ exports.getAccountDetails = (token) => {
             const filteredList = accountList.filter(function(account) {
               return filter.indexOf(account.accountId) >= 0;
             });
+            console.log('Accounts filtered. ' + filteredList.length) + ' accounts found';
 
-            console.log(filteredList);
-
-            if ( filteredList != null && filteredList[0] != null) {
-              const savingAccount = {
-                name: filteredList[0].name,
-                balance: filteredList[0].balance,
-              };
-              console.log('Returning account details ' + savingAccount);
-              resolve(savingAccount);
-            }
+            const result = [];
+            filteredList.forEach(function(account) {
+              result.push(new Account(account.name, account.balance));
+            });
+            console.log('Sending filtered accounts to front end');
+            resolve(result);
           }
         });
   });
   return promise;
+};
+
+/**
+ * Account objetc
+ * @param {*} name
+ * @param {*} balance
+ */
+function Account(name, balance) {
+  this.name = name;
+  this.balance = balance;
 };

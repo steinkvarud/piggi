@@ -48,7 +48,7 @@ html(lang="en")
 			.row
 				.col.text-center.rounded-left.card-text.p-3.ml-3
 					h6 Du har
-					h1.display-4.card-balance 156kr
+					h1.display-4.card-balance #{account[1].balance}kr
 					h6 på bankkortet
 				.col.mr-3.text-center.rounded-right.card-icon.icon
 					i.far.fa-credit-card
@@ -57,5 +57,5 @@ html(lang="en")
 					i.fas.fa-piggy-bank
 				.col.p-3.mr-3.text-center.rounded-right.piggy-bank-text
 					h6 Du har spart
-					h1.display-4.savings-balance #{account.balance}kr
+					h1.display-4.savings-balance #{account[0].balance}kr
 					h6 Hurra!
