@@ -11,7 +11,7 @@ Set the following env`s:
 - SSN - Your own social security number
 - SBANKEN_CLIENT_ID - clientId obtained from Sbanken
 - SBANKEN_SECRET - password obtained from Sbanken
-- ACCOUNT_ID - account you want to retrieve details for
+- ACCOUNT_ID - accounts you want to retrieve details for
 ```
 
 ### Install dependencies
