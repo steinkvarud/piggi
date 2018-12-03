@@ -41,21 +41,41 @@ html(lang="en")
 				color: #313d4d;
 				font-size: 4em;
 			}
+			@media(max-width: 767px){
+				.left-block { 
+					border-top-left-radius:5px;
+					border-top-right-radius: 5px;
+				}
+				.right-block {
+					border-bottom-left-radius:5px;
+					border-bottom-right-radius: 5px;
+				}
+			}
+			@media (min-width: 768px){
+				.left-block { 
+					border-top-left-radius:5px;
+					border-bottom-left-radius: 5px;
+				}
+				.right-block {
+					border-top-right-radius:5px;
+					border-bottom-right-radius: 5px;
+				}
+			}
 	body 
 		.container
 			.jumbotron.mt-5
 				h1.display-4 Hei du!
 			.row
-				.col.text-center.rounded-left.card-text.p-3.ml-3
+				.col.text-center.card-text.p-3.ml-3.left-block
 					h6 Du har
 					h1.display-4.card-balance #{account[1].balance}kr
 					h6 på bankkortet
-				.col.mr-3.text-center.rounded-right.card-icon.icon
+				.col.mr-3.text-center.card-icon.icon.right-block
 					i.far.fa-credit-card
 			.row.mt-3
-				.col.ml-3.text-center.rounded-left.icon.piggy-bank-icon
+				.col.ml-3.text-center.icon.piggy-bank-icon.left-block
 					i.fas.fa-piggy-bank
-				.col.p-3.mr-3.text-center.rounded-right.piggy-bank-text
+				.col.p-3.mr-3.text-center.piggy-bank-text.right-block
 					h6 Du har spart
 					h1.display-4.savings-balance #{account[0].balance}kr
 					h6 Hurra!
