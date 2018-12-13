@@ -80,5 +80,5 @@ exports.getAccountDetails = (token) => {
  */
 function Account(name, balance) {
   this.name = name;
-  this.balance = balance;
+  this.balance = Math.round(balance);
 };
