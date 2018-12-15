@@ -32,6 +32,7 @@
     "btoa": "^1.2.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
+    "pkginfo": "^0.4.1",
     "promise": "^8.0.2",
     "pug": "^2.0.3",
     "superagent": "^4.0.0"

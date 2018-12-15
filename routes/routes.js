@@ -1,8 +1,9 @@
 const express = require('express');
 const router = new express.Router();
+const pkginfo = require('pkginfo')(module, 'version');
 
 const service = require('../service/sbanken');
-
+const ver = module.exports.version;
 router.use(function timeLog(req, res, next) {
   next();
 });
@@ -15,6 +16,7 @@ router.get('/', function(req, res) {
           console.log('Rendering account data ' + result);
           res.render('index', {
             account: result,
+            version: ver,
           });
         })
         .catch((error) => {
