@@ -1,6 +1,6 @@
 {
   "name": "piggi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "piggi is an app that integrates to the sbanken api",
   "main": "server.js",
   "scripts": {
