@@ -13,8 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/mariusbreivik/piggi.git"
   },
-  "publishConfig": {
-    "access": "private"
+  "release-it": {
+    "npm": {
+      "publish": "false"
+    }
   },
   "keywords": [
     "nodejs",
