@@ -6,7 +6,7 @@ exports.getAccessToken = () => {
   const clientId = process.env.SBANKEN_CLIENT_ID || 'clientId';
   const secret = process.env.SBANKEN_SECRET || '1337';
   const identityServer = 'https://auth.sbanken.no/identityserver/connect/token';
-  const basicAuth = btoa(clientId + ':' + secret);
+  const basicAuth = btoa(encodeURIComponent(clientId) + ":" + encodeURIComponent(secret));
 
   const promise = new Promise(function(resolve, reject) {
     console.log('Getting access token');
@@ -30,7 +30,7 @@ exports.getAccessToken = () => {
 
 exports.getAccountDetails = (token) => {
   const ssn = process.env.SSN || '12345678910';
-  const accountServiceUrl = 'https://api.sbanken.no/Bank/api/v1/Accounts/';
+  const accountServiceUrl = 'https://api.sbanken.no/exec.bank/api/v1/accounts/';
   const filter = process.env.ACCOUNT_ID.split(',') || '007';
 
   console.log('Getting account details ' + filter);
